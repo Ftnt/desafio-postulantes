@@ -1,3 +1,25 @@
+# Scraping SII👨‍💻
+
+## Instalacion
+
+Clonamos el repositorio
+
+`$ git clone url `
+
+## Instalacion
+
+`$  npm install`
+
+`$  node index.js`
+
+## Resultado
+Se encontrara el documento en la carpeta files
+
+![image](https://user-images.githubusercontent.com/63697694/164623403-11235ba9-7d02-41f4-92fe-4eb8080723d5.png)
+
+
+--------------------------------------------------------------------
+
 # Desafio Postulantes
 
 Con el fin de seleccionar a nuestros 2 developers, tenemos el siguente desafio.
