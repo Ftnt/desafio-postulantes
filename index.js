@@ -22,7 +22,9 @@ const arrayToObject = (array) => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   await page.goto(URL);
-
+  const dateUpdate = await page.textContent("#fechaActualizacion");
+  const title = await page.innerText(".title");
+  const bodyTitle = await page.innerText(".title ~ p");
   const allData = await page.$$eval("#tabledatasii tbody tr", (row) => {
     return row.map((row) => {
       const cells = row.querySelectorAll("td");
@@ -32,8 +34,11 @@ const arrayToObject = (array) => {
 
   const result = JSON.stringify(
     {
-      count: allData.length,
       url: URL,
+      title,
+      bodyTitle,
+      dateUpdate,
+      count: allData.length,
       results: arrayToObject(allData),
     },
     null,
