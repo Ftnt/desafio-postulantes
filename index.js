@@ -1,4 +1,5 @@
 const { chromium } = require("playwright");
+const fs = require("fs");
 
 const URL =
   "https://www.sii.cl/servicios_online/1047-nomina_inst_financieras-1714.html";
@@ -39,7 +40,10 @@ const arrayToObject = (array) => {
     2
   );
 
-  console.log(result);
+  fs.writeFile("./files/SII.json", result, (err) => {
+    if (err) throw err;
+    console.log("File saved");
+  });
 
   await browser.close();
 })();
