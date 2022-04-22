@@ -29,7 +29,17 @@ const arrayToObject = (array) => {
     });
   });
 
-  console.log(arrayToObject(allData));
+  const result = JSON.stringify(
+    {
+      count: allData.length,
+      url: URL,
+      results: arrayToObject(allData),
+    },
+    null,
+    2
+  );
+
+  console.log(result);
 
   await browser.close();
 })();
